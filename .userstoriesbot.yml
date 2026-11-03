@@ -1,0 +1,13 @@
+# Showcase fork only (never part of an upstream pull request).
+# The docs bundle in packages/docs-app/dist is pre-built from this branch (minified webpack production build, fix in packages/datetime) because the full monorepo build exceeds the recorder's time limit.
+version: 1
+app:
+  install: "true"  # a no-op; app.static needs an install
+  static: packages/docs-app/dist
+  url: http://localhost:{port}
+  readyPath: /
+  readyStatus: 200
+  runtime: node24
+demo:
+  maxVideos: 1
+  beforePass: false
